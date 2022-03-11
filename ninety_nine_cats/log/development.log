@@ -1343,3 +1343,532 @@ Processing by CatsController#index as HTML
 Completed 200 OK in 105ms (Views: 99.1ms | ActiveRecord: 5.0ms)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(723150122408807205)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCatRentalRequest (20220311203623)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "cat_rental_requests" ("id" bigserial primary key, "cat_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying DEFAULT 'PENDING', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20220311203623_create_cat_rental_request.rb:3
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_cat_rental_requests_on_cat_id" ON "cat_rental_requests"  ("cat_id")[0m
+  ↳ db/migrate/20220311203623_create_cat_rental_request.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220311203623"]]
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(723150122408807205)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCatRentalRequest Load (1.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 3]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 4]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 5]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 6]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 7]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 8]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:10
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.8ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2000-08-27"], ["color", "grey"], ["name", "jerry"], ["sex", "M"], ["description", "I am a mouse"], ["created_at", "2022-03-11 21:04:40.631219"], ["updated_at", "2022-03-11 21:04:40.631219"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2009-08-27"], ["color", "orange"], ["name", "gargfield"], ["sex", "M"], ["description", "Eating lasagna"], ["created_at", "2022-03-11 21:04:40.637069"], ["updated_at", "2022-03-11 21:04:40.637069"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1999-08-27"], ["color", "black"], ["name", "bro"], ["sex", "F"], ["description", "I am a bro"], ["created_at", "2022-03-11 21:04:40.643335"], ["updated_at", "2022-03-11 21:04:40.643335"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1900-06-27"], ["color", "grey"], ["name", "mom"], ["sex", "F"], ["description", "I am a mom"], ["created_at", "2022-03-11 21:04:40.649746"], ["updated_at", "2022-03-11 21:04:40.649746"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mCatRentalRequest Create (1.6ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 9], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:04:40.682927"], ["updated_at", "2022-03-11 21:04:40.682927"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 10], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:04:40.688635"], ["updated_at", "2022-03-11 21:04:40.688635"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 11], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:04:40.696044"], ["updated_at", "2022-03-11 21:04:40.696044"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 9], ["start_date", "2022-03-01"], ["end_date", "2022-03-11"], ["created_at", "2022-03-11 21:04:40.709676"], ["updated_at", "2022-03-11 21:04:40.709676"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Load (1.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  [1m[36mCatRentalRequest Load (1.1ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.7ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 9)[0m
+  [1m[36mCatRentalRequest Load (0.7ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 10) AND NOT (cat_rental_requests.id = NULL)[0m
+  [1m[36mCatRentalRequest Load (2.4ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.6ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 9) AND NOT (cat_rental_requests.id = NULL)[0m
+  [1m[36mCatRentalRequest Load (0.7ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 9)[0m
+  [1m[36mCatRentalRequest Load (0.7ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.5ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (1.8ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 9) AND NOT (cat_rental_requests.id = 1)[0m
+  [1m[36mCatRentalRequest Load (0.6ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (2.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 9) AND NOT (cat_rental_requests.id = 1) AND (cat_rental_requests.status = 'APPROVED')[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCatRentalRequest Load (1.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.7ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 9]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 10]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:10
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.5ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 11]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 12]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.8ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2000-08-27"], ["color", "grey"], ["name", "jerry"], ["sex", "M"], ["description", "I am a mouse"], ["created_at", "2022-03-11 21:32:53.508264"], ["updated_at", "2022-03-11 21:32:53.508264"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2009-08-27"], ["color", "orange"], ["name", "gargfield"], ["sex", "M"], ["description", "Eating lasagna"], ["created_at", "2022-03-11 21:32:53.515985"], ["updated_at", "2022-03-11 21:32:53.515985"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1999-08-27"], ["color", "black"], ["name", "bro"], ["sex", "F"], ["description", "I am a bro"], ["created_at", "2022-03-11 21:32:53.522735"], ["updated_at", "2022-03-11 21:32:53.522735"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1900-06-27"], ["color", "grey"], ["name", "mom"], ["sex", "F"], ["description", "I am a mom"], ["created_at", "2022-03-11 21:32:53.529960"], ["updated_at", "2022-03-11 21:32:53.529960"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCatRentalRequest Load (0.9ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.6ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 13]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.8ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 14]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 15]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 16]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.7ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2000-08-27"], ["color", "grey"], ["name", "jerry"], ["sex", "M"], ["description", "I am a mouse"], ["created_at", "2022-03-11 21:33:26.466247"], ["updated_at", "2022-03-11 21:33:26.466247"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCat Create (0.6ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2009-08-27"], ["color", "orange"], ["name", "gargfield"], ["sex", "M"], ["description", "Eating lasagna"], ["created_at", "2022-03-11 21:33:26.472622"], ["updated_at", "2022-03-11 21:33:26.472622"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1999-08-27"], ["color", "black"], ["name", "bro"], ["sex", "F"], ["description", "I am a bro"], ["created_at", "2022-03-11 21:33:26.477921"], ["updated_at", "2022-03-11 21:33:26.477921"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1900-06-27"], ["color", "grey"], ["name", "mom"], ["sex", "F"], ["description", "I am a mom"], ["created_at", "2022-03-11 21:33:26.484052"], ["updated_at", "2022-03-11 21:33:26.484052"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mCatRentalRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cat_id", 17], ["start_date", "2021-03-01"], ["end_date", "2021-03-31"], ["status", "APPROVED"], ["created_at", "2022-03-11 21:33:26.515452"], ["updated_at", "2022-03-11 21:33:26.515452"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mCatRentalRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 18], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:33:26.524368"], ["updated_at", "2022-03-11 21:33:26.524368"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 19], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:33:26.529545"], ["updated_at", "2022-03-11 21:33:26.529545"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Create (0.8ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cat_id", 17], ["start_date", "2021-05-01"], ["end_date", "2021-05-31"], ["status", "APPROVED"], ["created_at", "2022-03-11 21:33:26.537768"], ["updated_at", "2022-03-11 21:33:26.537768"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Load (0.7ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.6ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND NOT (cat_rental_requests.id = 8) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date < '2021-05-31' AND cat_rental_requests.start_date > '2021-05-01') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.9ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (1.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND NOT (cat_rental_requests.id = 8) AND (cat_rental_requests.status = 'APPROVED')[0m
+  [1m[36mCatRentalRequest Load (1.0ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (1.0ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND NOT (cat_rental_requests.id = 8) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date < '2021-05-31' AND cat_rental_requests.start_date > '2021-05-01') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.9ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND NOT (cat_rental_requests.id = 8) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date < '2021-05-01' AND cat_rental_requests.start_date > '2021-05-31') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (1.8ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND NOT (cat_rental_requests.id = 8) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date < '2021-05-01' OR cat_rental_requests.start_date > '2021-05-31') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date < '2021-04-01' OR cat_rental_requests.start_date > '2021-04-30') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (1.3ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 17], ["start_date", "2021-04-01"], ["end_date", "2021-04-30"], ["created_at", "2022-03-11 21:39:38.395154"], ["updated_at", "2022-03-11 21:39:38.395154"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 17) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date < '2021-04-01' OR cat_rental_requests.start_date > '2021-05-02') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (1.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (1.2ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 17], ["start_date", "2021-04-01"], ["end_date", "2021-05-02"], ["created_at", "2022-03-11 21:39:52.644027"], ["updated_at", "2022-03-11 21:39:52.644027"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCatRentalRequest Load (1.0ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.7ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.6ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCatRentalRequest Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 17]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.7ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 18]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 19]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCatRentalRequest Load (0.5ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1[0m  [["cat_id", 20]]
+  ↳ db/seeds.rb:10
+  [1m[36mCat Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.7ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2000-08-27"], ["color", "grey"], ["name", "jerry"], ["sex", "M"], ["description", "I am a mouse"], ["created_at", "2022-03-11 21:47:30.114581"], ["updated_at", "2022-03-11 21:47:30.114581"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCat Create (0.6ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2009-08-27"], ["color", "orange"], ["name", "gargfield"], ["sex", "M"], ["description", "Eating lasagna"], ["created_at", "2022-03-11 21:47:30.120338"], ["updated_at", "2022-03-11 21:47:30.120338"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1999-08-27"], ["color", "black"], ["name", "bro"], ["sex", "F"], ["description", "I am a bro"], ["created_at", "2022-03-11 21:47:30.124235"], ["updated_at", "2022-03-11 21:47:30.124235"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1900-06-27"], ["color", "grey"], ["name", "mom"], ["sex", "F"], ["description", "I am a mom"], ["created_at", "2022-03-11 21:47:30.128324"], ["updated_at", "2022-03-11 21:47:30.128324"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCatRentalRequest Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-03-01' AND '2021-03-31' OR cat_rental_requests.start_date BETWEEN '2021-03-01' AND '2021-03-31') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/cat_rental_request.rb:24
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mCatRentalRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cat_id", 21], ["start_date", "2021-03-01"], ["end_date", "2021-03-31"], ["status", "APPROVED"], ["created_at", "2022-03-11 21:47:30.143819"], ["updated_at", "2022-03-11 21:47:30.143819"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCatRentalRequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 22) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2022-02-01' AND '2022-02-11' OR cat_rental_requests.start_date BETWEEN '2022-02-01' AND '2022-02-11') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/cat_rental_request.rb:24
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 22], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:47:30.150468"], ["updated_at", "2022-03-11 21:47:30.150468"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCatRentalRequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 23) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2022-02-01' AND '2022-02-11' OR cat_rental_requests.start_date BETWEEN '2022-02-01' AND '2022-02-11') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/cat_rental_request.rb:24
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mCatRentalRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 23], ["start_date", "2022-02-01"], ["end_date", "2022-02-11"], ["created_at", "2022-03-11 21:47:30.163823"], ["updated_at", "2022-03-11 21:47:30.163823"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-05-01' AND '2021-05-31' OR cat_rental_requests.start_date BETWEEN '2021-05-01' AND '2021-05-31') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/cat_rental_request.rb:24
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cat_id", 21], ["start_date", "2021-05-01"], ["end_date", "2021-05-31"], ["status", "APPROVED"], ["created_at", "2022-03-11 21:47:30.170760"], ["updated_at", "2022-03-11 21:47:30.170760"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCatRentalRequest Load (1.0ms)[0m  [1m[34mSELECT  "cat_rental_requests".* FROM "cat_rental_requests" ORDER BY "cat_rental_requests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-04-01' AND '2021-05-02' OR cat_rental_requests.start_date BETWEEN '2021-04-01' AND '2021-05-02') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (2.7ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-04-01' AND '2021-05-01' OR cat_rental_requests.start_date BETWEEN '2021-04-01' AND '2021-05-01') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (1.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-04-01' AND '2021-04-30' OR cat_rental_requests.start_date BETWEEN '2021-04-01' AND '2021-04-30') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (1.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (1.2ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 21], ["start_date", "2021-04-01"], ["end_date", "2021-04-30"], ["created_at", "2022-03-11 21:48:22.155659"], ["updated_at", "2022-03-11 21:48:22.155659"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-03-31' AND '2021-04-30' OR cat_rental_requests.start_date BETWEEN '2021-03-31' AND '2021-04-30') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_rental_requests.cat_id = 21) AND (cat_rental_requests.status = 'APPROVED') AND (cat_rental_requests.end_date BETWEEN '2021-03-30' AND '2021-04-30' OR cat_rental_requests.start_date BETWEEN '2021-03-30' AND '2021-04-30') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (1.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
